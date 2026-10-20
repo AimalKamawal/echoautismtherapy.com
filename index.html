@@ -1,1945 +1,405 @@
-```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Echo Autism Behavior Therapy | ABA Therapy in Woodbridge, VA</title>
-
-  <meta
-    name="description"
-    content="Echo Autism Behavior Therapy provides compassionate, individualized ABA therapy and parent coaching for children with autism in Woodbridge, Virginia and surrounding communities."
-  >
-
-  <meta
-    name="keywords"
-    content="ABA therapy Woodbridge VA, autism therapy Woodbridge Virginia, Applied Behavior Analysis Woodbridge, in-home ABA therapy Virginia, BCBA Woodbridge, RBT Woodbridge"
-  >
-
-  <meta name="author" content="Echo Autism Behavior Therapy">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Echo Autism Behavior Therapy">
-  <meta
-    property="og:description"
-    content="Compassionate, individualized ABA therapy for children and families in Woodbridge, Virginia."
-  >
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://echoautismtherapy.com">
-
-  <!-- Favicon using inline SVG -->
-  <link
-    rel="icon"
-    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2358B8B0'/%3E%3Cpath d='M28 52c12-24 32-24 44 0-12 24-32 24-44 0z' fill='white'/%3E%3Ccircle cx='50' cy='52' r='8' fill='%2358B8B0'/%3E%3C/svg%3E"
-  >
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b7890">
+  <meta name="description" content="Echo Autism Behavior Therapy provides individualized ABA therapy and parent coaching for children and families in Woodbridge, Virginia and surrounding communities.">
+  <title>Echo Autism Behavior Therapy | Woodbridge, VA</title>
   <style>
-    /* =========================================================
-       ECHO AUTISM BEHAVIOR THERAPY
-       Simple single-page website
-       ========================================================= */
-
     :root {
-      --turquoise: #58b8b0;
-      --turquoise-dark: #317f7a;
-      --green: #719b78;
-      --green-light: #e9f3ea;
-      --yellow: #f4c96b;
-      --yellow-light: #fff6dc;
-      --purple: #8977a9;
-      --purple-light: #f1edf7;
-
-      --cream: #fbfaf6;
-      --white: #ffffff;
-      --text: #2f3b3b;
-      --muted: #667474;
-      --border: #dce7e5;
-
-      --shadow: 0 12px 35px rgba(43, 75, 75, 0.10);
-      --radius: 18px;
-      --max-width: 1160px;
+      --navy: #123b58;
+      --teal: #087e8b;
+      --teal-dark: #066777;
+      --mint: #dff5ed;
+      --yellow: #ffbf3f;
+      --coral: #f36d83;
+      --purple: #8c6bd1;
+      --ink: #243746;
+      --muted: #607382;
+      --paper: #fffdf9;
+      --line: #e4ecee;
+      --shadow: 0 16px 42px rgba(18,59,88,.10);
+      --radius: 24px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--ink); background: var(--paper); line-height: 1.65; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+    .container { width: min(1140px, calc(100% - 40px)); margin-inline: auto; }
+    .skip-link { position: absolute; left: -9999px; top: 10px; z-index: 100; background: white; padding: 10px 14px; }
+    .skip-link:focus { left: 10px; }
+    header { position: sticky; top: 0; z-index: 20; background: rgba(255,253,249,.94); backdrop-filter: blur(14px); border-bottom: 1px solid rgba(228,236,238,.9); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; text-decoration: none; min-width: 0; }
+    .brand img { width: 160px; height: 68px; object-fit: contain; object-position: left center; }
+    .nav-links { display: flex; align-items: center; gap: 26px; }
+    .nav-links a { text-decoration: none; color: var(--navy); font-weight: 650; font-size: .94rem; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--teal); }
+    .nav-links .nav-call { padding: 11px 17px; border-radius: 999px; color: white; background: var(--teal); }
+    .menu-toggle { display: none; border: 1px solid var(--line); background: white; border-radius: 12px; padding: 10px 12px; color: var(--navy); font: inherit; font-weight: 700; }
+    .hero { padding: 64px 0 76px; overflow: hidden; background: radial-gradient(circle at 5% 10%, #e9f8f2 0, transparent 32%), radial-gradient(circle at 94% 8%, #fff0d5 0, transparent 26%); }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 56px; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 9px; color: var(--teal-dark); font-size: .79rem; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; }
+    .eyebrow:before { content: ""; width: 27px; height: 3px; border-radius: 9px; background: var(--yellow); }
+    h1, h2, h3 { color: var(--navy); line-height: 1.15; letter-spacing: -.035em; margin-top: 0; }
+    h1 { font-size: clamp(2.7rem, 5vw, 4.55rem); margin: 17px 0 22px; max-width: 660px; }
+    h1 span { color: var(--teal); }
+    .hero-copy { font-size: 1.13rem; color: var(--muted); max-width: 570px; margin-bottom: 28px; }
+    .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 13px; }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; border-radius: 999px; padding: 13px 21px; text-decoration: none; font-weight: 750; border: 2px solid transparent; transition: transform .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--teal); color: white; box-shadow: 0 9px 20px rgba(8,126,139,.19); }
+    .btn-primary:hover { background: var(--teal-dark); }
+    .btn-secondary { border-color: #cbdfe1; color: var(--navy); background: rgba(255,255,255,.75); }
+    .hero-note { margin-top: 23px; display: flex; align-items: center; gap: 10px; color: var(--muted); font-size: .9rem; }
+    .hero-note .dot { width: 10px; height: 10px; border-radius: 50%; background: #4db99a; box-shadow: 0 0 0 5px #dff5ed; margin: 0 4px; }
+    .hero-visual { position: relative; }
+    .hero-photo { width: 100%; height: 480px; object-fit: cover; border-radius: 34px 34px 34px 110px; box-shadow: var(--shadow); }
+    .photo-tag { position: absolute; left: -22px; bottom: 26px; background: white; padding: 15px 19px; border-radius: 18px; box-shadow: var(--shadow); display: flex; align-items: center; gap: 12px; max-width: 245px; }
+    .tag-icon { width: 43px; height: 43px; border-radius: 14px; display: grid; place-items: center; background: #fff0d5; font-size: 1.4rem; flex: 0 0 auto; }
+    .photo-tag strong { display: block; color: var(--navy); font-size: .93rem; }
+    .photo-tag small { display: block; color: var(--muted); font-size: .78rem; }
+    section { padding: 82px 0; }
+    .section-head { max-width: 710px; margin: 0 auto 42px; text-align: center; }
+    .section-head h2 { font-size: clamp(2rem, 3.5vw, 3rem); margin: 12px 0 15px; }
+    .section-head p { color: var(--muted); margin: 0; font-size: 1.05rem; }
+    .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .pillar { background: white; border: 1px solid var(--line); border-radius: var(--radius); padding: 27px; box-shadow: 0 8px 25px rgba(18,59,88,.04); }
+    .pillar-icon { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 17px; margin-bottom: 19px; font-size: 1.45rem; }
+    .pillar:nth-child(1) .pillar-icon { background: #dff5ed; }
+    .pillar:nth-child(2) .pillar-icon { background: #fff0d5; }
+    .pillar:nth-child(3) .pillar-icon { background: #f0e9ff; }
+    .pillar h3 { font-size: 1.23rem; margin-bottom: 9px; }
+    .pillar p { color: var(--muted); margin: 0; font-size: .96rem; }
+    .services { background: #f3faf8; }
+    .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+    .service-card { background: white; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow); display: grid; grid-template-columns: .92fr 1.08fr; min-height: 320px; }
+    .service-card img { width: 100%; height: 100%; min-height: 320px; object-fit: cover; }
+    .service-content { padding: 28px 25px; align-self: center; }
+    .service-content h3 { font-size: 1.45rem; margin: 10px 0 12px; }
+    .service-content p { color: var(--muted); margin: 0 0 15px; font-size: .94rem; }
+    .check-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+    .check-list li { position: relative; padding-left: 25px; font-size: .9rem; color: #415766; }
+    .check-list li:before { content: "✓"; position: absolute; left: 0; color: var(--teal); font-weight: 900; }
+    .philosophy-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 64px; align-items: center; }
+    .philosophy-art { background: var(--mint); border-radius: 32px; padding: 34px; position: relative; overflow: hidden; }
+    .philosophy-art:after { content: ""; position: absolute; width: 170px; height: 170px; border: 22px solid rgba(140,107,209,.18); border-radius: 50%; right: -50px; bottom: -58px; }
+    .quote-mark { color: var(--teal); font-size: 4.5rem; font-family: Georgia, serif; line-height: 1; }
+    .philosophy-art blockquote { font-size: 1.55rem; line-height: 1.4; font-weight: 750; color: var(--navy); margin: 8px 0 22px; position: relative; z-index: 1; }
+    .philosophy-art p { color: var(--muted); margin: 0; position: relative; z-index: 1; }
+    .philosophy-copy h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin: 13px 0 18px; }
+    .philosophy-copy > p { color: var(--muted); }
+    .values { display: grid; grid-template-columns: 1fr 1fr; gap: 17px 20px; margin-top: 24px; }
+    .value { display: flex; gap: 11px; align-items: flex-start; }
+    .value-icon { flex: 0 0 auto; width: 32px; height: 32px; display: grid; place-items: center; background: #e4f5f1; border-radius: 10px; color: var(--teal); font-weight: 900; }
+    .value strong { display: block; color: var(--navy); font-size: .95rem; }
+    .value span { color: var(--muted); font-size: .86rem; display: block; }
+    .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+    .step { position: relative; padding: 25px 21px; border: 1px solid var(--line); border-radius: 22px; background: white; }
+    .step-number { width: 42px; height: 42px; display: grid; place-items: center; background: var(--teal); color: white; border-radius: 14px; font-weight: 850; margin-bottom: 19px; }
+    .step h3 { font-size: 1.12rem; margin-bottom: 9px; }
+    .step p { font-size: .9rem; color: var(--muted); margin: 0; }
+    .insurance { background: #fff7e7; }
+    .insurance-wrap { display: grid; grid-template-columns: .9fr 1.1fr; gap: 50px; align-items: center; }
+    .insurance-copy h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin: 13px 0 16px; }
+    .insurance-copy p { color: var(--muted); }
+    .insurance-card { background: white; border-radius: 26px; padding: 29px; box-shadow: var(--shadow); }
+    .insurance-card h3 { font-size: 1.25rem; margin-bottom: 7px; }
+    .insurance-card > p { margin-top: 0; color: var(--muted); font-size: .92rem; }
+    .insurer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin: 21px 0; }
+    .insurer { border: 1px solid var(--line); border-radius: 13px; padding: 13px 14px; display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: .91rem; }
+    .insurer:before { content: "✓"; color: var(--teal); font-weight: 900; }
+    .disclaimer { color: var(--muted); font-size: .8rem; margin-bottom: 0; }
+    .careers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+    .career-card { border: 1px solid var(--line); border-radius: 24px; padding: 29px; background: white; }
+    .career-card h3 { font-size: 1.35rem; margin: 12px 0 10px; }
+    .career-card p { color: var(--muted); margin: 0; }
+    .career-label { display: inline-block; color: var(--teal-dark); background: var(--mint); border-radius: 999px; padding: 5px 11px; font-size: .76rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; }
+    .contact { background: var(--navy); color: white; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .contact h2 { color: white; font-size: clamp(2rem, 3.5vw, 3rem); margin: 12px 0 17px; }
+    .contact .eyebrow { color: #a7e9d7; }
+    .contact-copy p { color: #d1e0e7; max-width: 500px; }
+    .contact-details { display: grid; gap: 14px; margin-top: 25px; }
+    .contact-item { display: flex; align-items: center; gap: 14px; }
+    .contact-symbol { width: 44px; height: 44px; border-radius: 14px; display: grid; place-items: center; background: rgba(255,255,255,.12); font-size: 1.15rem; }
+    .contact-item small { display: block; color: #b9cdd7; font-size: .8rem; }
+    .contact-item a, .contact-item strong { color: white; font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
+    .map-frame { border: 0; width: 100%; height: 330px; border-radius: 25px; box-shadow: 0 18px 40px rgba(0,0,0,.18); }
+    footer { background: #0b2e47; color: #c4d6df; padding: 24px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; }
+    .footer-brand { display: flex; align-items: center; gap: 13px; }
+    .footer-brand img { width: 104px; height: 54px; object-fit: contain; background: white; border-radius: 10px; }
+    .footer-brand span { font-size: .85rem; }
+    .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .footer-links a { color: #e4eff3; font-size: .86rem; text-decoration: none; }
+    .copyright { font-size: .78rem; text-align: center; margin: 17px 0 0; color: #8daab8; }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    @media (max-width: 980px) {
+      .hero-grid { gap: 32px; }
+      .hero-photo { height: 420px; }
+      .service-card { grid-template-columns: 1fr; }
+      .service-card img { height: 220px; min-height: 220px; }
+      .service-content { padding: 23px; }
+      .philosophy-grid, .insurance-wrap { gap: 34px; }
+      .steps { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 760px) {
+      .container { width: min(100% - 30px, 600px); }
+      .nav { min-height: 72px; }
+      .brand img { width: 132px; height: 58px; }
+      .menu-toggle { display: block; }
+      .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); padding: 18px 22px 23px; flex-direction: column; align-items: stretch; gap: 16px; box-shadow: 0 15px 22px rgba(18,59,88,.08); }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 5px 0; }
+      .nav-links .nav-call { text-align: center; padding: 12px 17px; }
+      .hero { padding: 44px 0 57px; }
+      .hero-grid, .philosophy-grid, .insurance-wrap, .contact-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 34px; }
+      h1 { font-size: clamp(2.5rem, 11vw, 3.6rem); }
+      .hero-copy { font-size: 1.02rem; }
+      .hero-photo { height: 330px; border-radius: 26px 26px 26px 75px; }
+      .photo-tag { left: 10px; bottom: 14px; }
+      section { padding: 62px 0; }
+      .section-head { margin-bottom: 30px; }
+      .pillars, .service-grid, .careers-grid { grid-template-columns: 1fr; }
+      .pillar { padding: 24px; }
+      .service-card { grid-template-columns: .9fr 1.1fr; }
+      .service-card img { height: 100%; min-height: 300px; }
+      .service-content { padding: 20px 17px; }
+      .service-content h3 { font-size: 1.22rem; }
+      .service-content p { font-size: .88rem; }
+      .check-list li { font-size: .84rem; }
+      .philosophy-art { padding: 28px; }
+      .philosophy-art blockquote { font-size: 1.35rem; }
+      .values { gap: 14px; }
+      .insurance-wrap { gap: 25px; }
+      .contact-grid { gap: 30px; }
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 480px) {
+      .service-card { grid-template-columns: 1fr; }
+      .service-card img { height: 220px; min-height: 220px; }
+      .values, .insurer-grid, .steps { grid-template-columns: 1fr; }
+      .actions .btn { width: 100%; }
+      .hero-note { align-items: flex-start; }
+      .footer-brand { align-items: flex-start; }
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family:
-        Inter,
-        ui-sans-serif,
-        system-ui,
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        sans-serif;
-      background: var(--cream);
-      color: var(--text);
-      line-height: 1.7;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      color: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    :focus-visible {
-      outline: 3px solid var(--yellow);
-      outline-offset: 4px;
-    }
-
-    .container {
-      width: min(92%, var(--max-width));
-      margin: 0 auto;
-    }
-
-    /* =========================================================
-       HEADER
-       ========================================================= */
-
-    header {
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(10px);
-    }
-
-    .nav {
-      min-height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-    }
-
-    .brand-mark {
-      width: 45px;
-      height: 45px;
-      border-radius: 50%;
-      background: var(--turquoise);
-      display: grid;
-      place-items: center;
-      color: white;
-      font-size: 21px;
-      font-weight: 800;
-    }
-
-    .brand-text strong {
-      display: block;
-      font-size: 17px;
-      line-height: 1.15;
-      color: var(--turquoise-dark);
-    }
-
-    .brand-text span {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-top: 3px;
-    }
-
-    nav ul {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      list-style: none;
-    }
-
-    nav a {
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 650;
-      color: var(--text);
-    }
-
-    nav a:hover {
-      color: var(--turquoise-dark);
-    }
-
-    .nav-cta {
-      background: var(--turquoise);
-      color: white !important;
-      padding: 11px 17px;
-      border-radius: 10px;
-    }
-
-    .nav-cta:hover {
-      background: var(--turquoise-dark);
-    }
-
-    .menu-button {
-      display: none;
-      border: 0;
-      background: transparent;
-      font-size: 28px;
-      cursor: pointer;
-      color: var(--text);
-    }
-
-    /* =========================================================
-       HERO
-       ========================================================= */
-
-    .hero {
-      padding: 70px 0 80px;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 90% 20%, rgba(88,184,176,.16), transparent 30%),
-        radial-gradient(circle at 10% 80%, rgba(137,119,169,.10), transparent 25%),
-        var(--cream);
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr .98fr;
-      align-items: center;
-      gap: 65px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--turquoise-dark);
-      background: #e5f4f2;
-      border-radius: 50px;
-      padding: 7px 13px;
-      font-size: 13px;
-      font-weight: 750;
-      margin-bottom: 20px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      background: var(--turquoise);
-      border-radius: 50%;
-    }
-
-    h1 {
-      font-size: clamp(40px, 5vw, 64px);
-      line-height: 1.08;
-      letter-spacing: -0.045em;
-      margin-bottom: 22px;
-      max-width: 680px;
-    }
-
-    .hero h1 span {
-      color: var(--turquoise-dark);
-    }
-
-    .hero-copy {
-      font-size: 18px;
-      color: var(--muted);
-      max-width: 600px;
-      margin-bottom: 30px;
-    }
-
-    .button-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      align-items: center;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      border-radius: 11px;
-      padding: 14px 21px;
-      font-size: 15px;
-      font-weight: 750;
-      transition: .2s ease;
-      border: 2px solid transparent;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: var(--turquoise);
-      color: white;
-      box-shadow: 0 7px 20px rgba(49,127,122,.18);
-    }
-
-    .btn-primary:hover {
-      background: var(--turquoise-dark);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      background: white;
-      color: var(--turquoise-dark);
-      border-color: var(--border);
-    }
-
-    .btn-secondary:hover {
-      border-color: var(--turquoise);
-    }
-
-    .hero-note {
-      margin-top: 17px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .hero-image {
-      position: relative;
-    }
-
-    .hero-image img {
-      width: 100%;
-      height: 500px;
-      object-fit: cover;
-      border-radius: 30px;
-      box-shadow: var(--shadow);
-    }
-
-    .hero-badge {
-      position: absolute;
-      left: -25px;
-      bottom: 25px;
-      background: white;
-      padding: 18px 20px;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      max-width: 220px;
-    }
-
-    .hero-badge strong {
-      display: block;
-      color: var(--green);
-      font-size: 15px;
-    }
-
-    .hero-badge span {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       GENERAL SECTIONS
-       ========================================================= */
-
-    section {
-      padding: 85px 0;
-    }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 45px;
-    }
-
-    .section-label {
-      color: var(--turquoise-dark);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: 12px;
-      font-weight: 800;
-      margin-bottom: 9px;
-    }
-
-    h2 {
-      font-size: clamp(30px, 4vw, 43px);
-      line-height: 1.15;
-      letter-spacing: -.03em;
-      margin-bottom: 15px;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 17px;
-    }
-
-    /* =========================================================
-       APPROACH
-       ========================================================= */
-
-    .approach {
-      background: white;
-    }
-
-    .approach-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .card {
-      padding: 30px;
-      background: white;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-    }
-
-    .approach .card:nth-child(1) {
-      background: var(--green-light);
-      border-color: transparent;
-    }
-
-    .approach .card:nth-child(2) {
-      background: var(--yellow-light);
-      border-color: transparent;
-    }
-
-    .approach .card:nth-child(3) {
-      background: var(--purple-light);
-      border-color: transparent;
-    }
-
-    .icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      border-radius: 13px;
-      background: white;
-      font-size: 23px;
-      margin-bottom: 22px;
-    }
-
-    .card h3 {
-      font-size: 21px;
-      margin-bottom: 9px;
-    }
-
-    .card p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    /* =========================================================
-       SERVICES
-       ========================================================= */
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 28px;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      box-shadow: 0 7px 25px rgba(43,75,75,.05);
-    }
-
-    .service-card img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
-
-    .service-content {
-      padding: 28px;
-    }
-
-    .service-content h3 {
-      font-size: 24px;
-      margin-bottom: 9px;
-    }
-
-    .service-content p {
-      color: var(--muted);
-      margin-bottom: 17px;
-    }
-
-    .service-content ul {
-      list-style: none;
-    }
-
-    .service-content li {
-      margin: 8px 0;
-      color: var(--text);
-      font-size: 14px;
-    }
-
-    .service-content li::before {
-      content: "✓";
-      color: var(--turquoise-dark);
-      font-weight: bold;
-      margin-right: 9px;
-    }
-
-    /* =========================================================
-       PHILOSOPHY / WHY US
-       ========================================================= */
-
-    .philosophy {
-      background: var(--purple-light);
-    }
-
-    .philosophy-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .philosophy-image img {
-      height: 440px;
-      width: 100%;
-      object-fit: cover;
-      border-radius: 25px;
-    }
-
-    .principles {
-      display: grid;
-      gap: 18px;
-    }
-
-    .principle {
-      background: white;
-      padding: 21px;
-      border-radius: 14px;
-      display: flex;
-      gap: 16px;
-      border: 1px solid rgba(137,119,169,.12);
-    }
-
-    .principle-number {
-      min-width: 38px;
-      height: 38px;
-      display: grid;
-      place-items: center;
-      border-radius: 50%;
-      background: var(--purple);
-      color: white;
-      font-weight: 800;
-    }
-
-    .principle h3 {
-      font-size: 17px;
-      margin-bottom: 3px;
-    }
-
-    .principle p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    /* =========================================================
-       ADMISSIONS
-       ========================================================= */
-
-    .admissions {
-      background: white;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-      position: relative;
-    }
-
-    .step {
-      text-align: center;
-      padding: 30px 20px;
-      position: relative;
-    }
-
-    .step-number {
-      width: 55px;
-      height: 55px;
-      margin: 0 auto 18px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--turquoise);
-      color: white;
-      font-size: 19px;
-      font-weight: 800;
-      position: relative;
-      z-index: 2;
-    }
-
-    .step h3 {
-      font-size: 19px;
-      margin-bottom: 8px;
-    }
-
-    .step p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .insurance {
-      margin-top: 60px;
-      padding: 38px;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-    }
-
-    .insurance-header {
-      text-align: center;
-      margin-bottom: 28px;
-    }
-
-    .insurance-header h3 {
-      font-size: 25px;
-      margin-bottom: 6px;
-    }
-
-    .insurance-header p {
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .insurance-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-    }
-
-    .insurance-option {
-      border: 1px solid var(--border);
-      background: white;
-      border-radius: 12px;
-      padding: 17px 10px;
-      text-align: center;
-      cursor: pointer;
-      font-weight: 700;
-      font-size: 13px;
-      transition: .2s ease;
-    }
-
-    .insurance-option:hover,
-    .insurance-option.active {
-      border-color: var(--turquoise);
-      background: #eef9f8;
-      color: var(--turquoise-dark);
-    }
-
-    .insurance-result {
-      margin-top: 20px;
-      min-height: 30px;
-      text-align: center;
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    /* =========================================================
-       CAREERS
-       ========================================================= */
-
-    .careers {
-      background: var(--green-light);
-    }
-
-    .career-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: start;
-    }
-
-    .career-copy p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .benefits {
-      display: grid;
-      gap: 11px;
-      list-style: none;
-    }
-
-    .benefits li {
-      background: white;
-      padding: 15px 17px;
-      border-radius: 11px;
-      font-size: 14px;
-      border: 1px solid rgba(113,155,120,.18);
-    }
-
-    .benefits li strong {
-      display: block;
-      margin-bottom: 2px;
-    }
-
-    .jobs {
-      display: grid;
-      gap: 13px;
-    }
-
-    .job {
-      background: white;
-      border-radius: 15px;
-      padding: 22px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 15px;
-      border: 1px solid rgba(113,155,120,.18);
-    }
-
-    .job h3 {
-      font-size: 17px;
-      margin-bottom: 2px;
-    }
-
-    .job p {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .job a {
-      white-space: nowrap;
-      text-decoration: none;
-      color: var(--turquoise-dark);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    /* =========================================================
-       CONTACT
-       ========================================================= */
-
-    .contact {
-      background: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 30px;
-    }
-
-    .contact-card {
-      background: var(--cream);
-      border-radius: 20px;
-      padding: 30px;
-      border: 1px solid var(--border);
-    }
-
-    .contact-item {
-      margin-bottom: 23px;
-    }
-
-    .contact-item:last-child {
-      margin-bottom: 0;
-    }
-
-    .contact-item strong {
-      display: block;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: .07em;
-      color: var(--turquoise-dark);
-      margin-bottom: 4px;
-    }
-
-    .contact-item a {
-      color: var(--text);
-      text-decoration: none;
-      font-weight: 650;
-    }
-
-    .contact-item a:hover {
-      color: var(--turquoise-dark);
-    }
-
-    .map {
-      min-height: 390px;
-      border-radius: 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-    }
-
-    .map iframe {
-      width: 100%;
-      height: 100%;
-      min-height: 390px;
-      border: 0;
-    }
-
-    /* =========================================================
-       INTAKE CTA
-       ========================================================= */
-
-    .cta {
-      padding: 70px 0;
-    }
-
-    .cta-box {
-      background:
-        radial-gradient(circle at 85% 20%, rgba(255,255,255,.22), transparent 30%),
-        var(--turquoise-dark);
-      color: white;
-      padding: 55px;
-      border-radius: 27px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 30px;
-    }
-
-    .cta-box h2 {
-      max-width: 700px;
-      margin-bottom: 10px;
-    }
-
-    .cta-box p {
-      opacity: .9;
-      max-width: 650px;
-    }
-
-    .cta-box .btn {
-      background: white;
-      color: var(--turquoise-dark);
-      flex-shrink: 0;
-    }
-
-    /* =========================================================
-       FOOTER
-       ========================================================= */
-
-    footer {
-      background: #263c3c;
-      color: white;
-      padding: 40px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 40px;
-      padding-bottom: 30px;
-    }
-
-    footer .brand-text strong {
-      color: white;
-    }
-
-    footer .brand-text span {
-      color: #b7c7c5;
-    }
-
-    footer p {
-      color: #c3d0ce;
-      font-size: 13px;
-      max-width: 430px;
-      margin-top: 15px;
-    }
-
-    footer h3 {
-      font-size: 14px;
-      margin-bottom: 12px;
-    }
-
-    footer ul {
-      list-style: none;
-    }
-
-    footer li {
-      margin: 6px 0;
-      color: #c3d0ce;
-      font-size: 13px;
-    }
-
-    footer a {
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      color: white;
-    }
-
-    .copyright {
-      border-top: 1px solid rgba(255,255,255,.12);
-      padding-top: 20px;
-      text-align: center;
-      color: #aebdbb;
-      font-size: 12px;
-    }
-
-    /* =========================================================
-       RESPONSIVE
-       ========================================================= */
-
-    @media (max-width: 900px) {
-
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 78px;
-        left: 0;
-        right: 0;
-        background: white;
-        padding: 22px;
-        border-bottom: 1px solid var(--border);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      nav ul.show {
-        display: flex;
-      }
-
-      nav li {
-        padding: 11px 0;
-        text-align: center;
-      }
-
-      .menu-button {
-        display: block;
-      }
-
-      .hero-grid,
-      .philosophy-grid,
-      .career-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-image {
-        order: -1;
-      }
-
-      .hero-image img {
-        height: 390px;
-      }
-
-      .hero-badge {
-        left: 15px;
-      }
-
-      .approach-grid,
-      .steps {
-        grid-template-columns: 1fr;
-      }
-
-      .insurance-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cta-box {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      section {
-        padding: 65px 0;
-      }
-
-      .hero {
-        padding: 45px 0 65px;
-      }
-
-      h1 {
-        font-size: 39px;
-      }
-
-      .hero-copy {
-        font-size: 16px;
-      }
-
-      .hero-image img {
-        height: 300px;
-        border-radius: 20px;
-      }
-
-      .hero-badge {
-        position: relative;
-        left: 0;
-        bottom: auto;
-        margin-top: -35px;
-        margin-left: 15px;
-        z-index: 2;
-      }
-
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-card img {
-        height: 220px;
-      }
-
-      .insurance {
-        padding: 25px 15px;
-      }
-
-      .insurance-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .job {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      .cta-box {
-        padding: 35px 25px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .button-row {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .button-row .btn {
-        width: 100%;
-      }
-    }
-
-    /* Reduced motion accessibility */
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        transition: none !important;
-      }
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
     }
   </style>
 </head>
-
 <body>
-
-<!-- =========================================================
-     HEADER
-     ========================================================= -->
-
-<header>
-  <div class="container nav">
-
-    <a class="brand" href="#home" aria-label="Echo Autism Behavior Therapy home">
-
-      <div class="brand-mark" aria-hidden="true">E</div>
-
-      <div class="brand-text">
-        <strong>Echo Autism</strong>
-        <span>Behavior Therapy</span>
-      </div>
-
-    </a>
-
-    <button
-      class="menu-button"
-      id="menuButton"
-      aria-label="Open navigation menu"
-      aria-expanded="false"
-    >
-      ☰
-    </button>
-
-    <nav aria-label="Main navigation">
-
-      <ul id="navMenu">
-        <li><a href="#about">Our Approach</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#admissions">Admissions</a></li>
-        <li><a href="#careers">Careers</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a class="nav-cta" href="#intake">Start Intake</a>
-        </li>
-      </ul>
-
-    </nav>
-
-  </div>
-</header>
-
-
-<main>
-
-<!-- =========================================================
-     HERO
-     ========================================================= -->
-
-<section class="hero" id="home">
-
-  <div class="container hero-grid">
-
-    <div>
-
-      <div class="eyebrow">
-        Compassionate ABA Therapy in Woodbridge, Virginia
-      </div>
-
-      <h1>
-        Helping children
-        <span>grow, connect,</span>
-        and thrive.
-      </h1>
-
-      <p class="hero-copy">
-        Echo Autism Behavior Therapy provides individualized,
-        evidence-based Applied Behavior Analysis services designed
-        around each child's strengths, needs, and family.
-      </p>
-
-      <div class="button-row">
-
-        <!-- Replace this link with your HIPAA-compliant intake portal -->
-        <a class="btn btn-primary" href="#intake">
-          Start Intake Process
-        </a>
-
-        <a class="btn btn-secondary" href="tel:7033096558">
-          Call 703-309-6558
-        </a>
-
-      </div>
-
-      <p class="hero-note">
-        Serving Woodbridge and surrounding Northern Virginia communities.
-      </p>
-
-    </div>
-
-
-    <div class="hero-image">
-
-      <!-- Replace this image with your own licensed professional photography -->
-      <img
-        src="https://images.unsplash.com/photo-1607453998774-d533f65dac99?auto=format&fit=crop&w=1000&q=85"
-        alt="Child participating in a positive learning activity with an adult"
-      >
-
-      <div class="hero-badge">
-        <strong>Individualized care</strong>
-        <span>Therapy plans built around each child's unique goals.</span>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     OUR APPROACH
-     ========================================================= -->
-
-<section class="approach" id="about">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="section-label">Our Approach</div>
-
-      <h2>
-        Care that meets children where they are.
-      </h2>
-
-      <p>
-        We believe meaningful progress starts with understanding the
-        whole child and partnering closely with their caregivers.
-      </p>
-
-    </div>
-
-
-    <div class="approach-grid">
-
-      <article class="card">
-
-        <div class="icon" aria-hidden="true">🏡</div>
-
-        <h3>In-Home ABA</h3>
-
-        <p>
-          Convenient therapy delivered in a familiar environment,
-          helping children practice important skills in everyday routines.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <div class="icon" aria-hidden="true">🌱</div>
-
-        <h3>Individualized Plans</h3>
-
-        <p>
-          Goals and teaching strategies are tailored to each child's
-          developmental needs, interests, strengths, and family priorities.
-        </p>
-
-      </article>
-
-
-      <article class="card">
-
-        <div class="icon" aria-hidden="true">💛</div>
-
-        <h3>Family Partnership</h3>
-
-        <p>
-          Parents and caregivers receive practical coaching and support
-          so progress can continue beyond therapy sessions.
-        </p>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     SERVICES
-     ========================================================= -->
-
-<section id="services">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="section-label">Services</div>
-
-      <h2>
-        Evidence-based support, delivered with compassion.
-      </h2>
-
-      <p>
-        Our services are designed to build functional skills,
-        encourage independence, and support meaningful participation
-        in everyday life.
-      </p>
-
-    </div>
-
-
-    <div class="services-grid">
-
-      <article class="service-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=1000&q=85"
-          alt="Child engaged in a playful learning activity"
-        >
-
-        <div class="service-content">
-
-          <h3>In-Home ABA Therapy</h3>
-
-          <p>
-            Individualized Applied Behavior Analysis therapy delivered
-            in the child's natural environment.
-          </p>
-
-          <ul>
-            <li>Individualized skill-building goals</li>
-            <li>Communication and social skills</li>
-            <li>Daily living and independence skills</li>
-            <li>Positive behavior support</li>
-          </ul>
-
-        </div>
-
-      </article>
-
-
-      <article class="service-card">
-
-        <img
-          src="https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=1000&q=85"
-          alt="Parent and child spending time together"
-        >
-
-        <div class="service-content">
-
-          <h3>Parent Training & Coaching</h3>
-
-          <p>
-            Practical guidance that helps caregivers confidently support
-            their child's goals throughout the week.
-          </p>
-
-          <ul>
-            <li>Caregiver education</li>
-            <li>Home-based strategies</li>
-            <li>Generalization of skills</li>
-            <li>Collaborative treatment planning</li>
-          </ul>
-
-        </div>
-
-      </article>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     CLINICAL PHILOSOPHY
-     ========================================================= -->
-
-<section class="philosophy">
-
-  <div class="container philosophy-grid">
-
-    <div class="philosophy-image">
-
-      <img
-        src="https://images.unsplash.com/photo-1602030028438-4cf153cbae9e?auto=format&fit=crop&w=1000&q=85"
-        alt="Child enjoying a supportive learning environment"
-      >
-
-    </div>
-
-
-    <div>
-
-      <div class="section-label">Clinical Philosophy</div>
-
-      <h2>
-        Progress built on trust, respect, and evidence.
-      </h2>
-
-      <p style="color:var(--muted); margin-bottom:25px;">
-        Our clinical team uses evidence-based ABA practices while
-        keeping each child's individuality and quality of life at
-        the center of treatment.
-      </p>
-
-
-      <div class="principles">
-
-        <div class="principle">
-
-          <div class="principle-number">1</div>
-
-          <div>
-            <h3>Positive reinforcement</h3>
-            <p>
-              We create motivating learning experiences and celebrate
-              meaningful progress.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="principle">
-
-          <div class="principle-number">2</div>
-
-          <div>
-            <h3>Individualized treatment</h3>
-            <p>
-              Clinical goals are based on each child's assessment,
-              strengths, needs, and family priorities.
-            </p>
-          </div>
-
-        </div>
-
-
-        <div class="principle">
-
-          <div class="principle-number">3</div>
-
-          <div>
-            <h3>Collaborative care</h3>
-            <p>
-              We value communication between families, clinicians,
-              educators, and other members of a child's care team.
-            </p>
-          </div>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     ADMISSIONS & INSURANCE
-     ========================================================= -->
-
-<section class="admissions" id="admissions">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="section-label">Admissions</div>
-
-      <h2>
-        Starting services can be simple.
-      </h2>
-
-      <p>
-        We guide families through the intake and authorization process
-        so you know what to expect along the way.
-      </p>
-
-    </div>
-
-
-    <div class="steps">
-
-      <div class="step">
-
-        <div class="step-number">1</div>
-
-        <h3>Autism Diagnosis</h3>
-
-        <p>
-          Begin with a qualifying autism diagnosis and relevant
-          developmental information.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="step-number">2</div>
-
-        <h3>Intake & Authorization</h3>
-
-        <p>
-          Complete intake paperwork and work with your insurance
-          provider to determine authorization requirements.
-        </p>
-
-      </div>
-
-
-      <div class="step">
-
-        <div class="step-number">3</div>
-
-        <h3>Begin Therapy</h3>
-
-        <p>
-          Once services are approved and scheduled, your child's
-          individualized therapy program can begin.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <!-- INSURANCE -->
-
-    <div class="insurance">
-
-      <div class="insurance-header">
-
-        <h3>Check Your Insurance Provider</h3>
-
-        <p>
-          Select your provider for general information about plans
-          we may accept. Benefits and authorization requirements vary
-          by individual plan.
-        </p>
-
-      </div>
-
-
-      <div class="insurance-grid">
-
-        <button class="insurance-option" data-provider="Blue Cross Blue Shield">
-          Blue Cross Blue Shield
-        </button>
-
-        <button class="insurance-option" data-provider="Aetna">
-          Aetna
-        </button>
-
-        <button class="insurance-option" data-provider="Medicaid">
-          Medicaid
-        </button>
-
-        <button class="insurance-option" data-provider="Cigna">
-          Cigna
-        </button>
-
-        <button class="insurance-option" data-provider="CareFirst">
-          CareFirst
-        </button>
-
-      </div>
-
-
-      <div
-        class="insurance-result"
-        id="insuranceResult"
-        aria-live="polite"
-      >
-        Select your insurance provider above.
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     CAREERS
-     ========================================================= -->
-
-<section class="careers" id="careers">
-
-  <div class="container career-grid">
-
-    <div class="career-copy">
-
-      <div class="section-label">Careers</div>
-
-      <h2>
-        Build meaningful work with a supportive clinical team.
-      </h2>
-
-      <p>
-        Echo Autism Behavior Therapy is growing a team of compassionate
-        professionals who want to make a meaningful difference in the
-        lives of children and families.
-      </p>
-
-      <ul class="benefits">
-
-        <li>
-          <strong>Clinical mentorship</strong>
-          Grow your skills with support from experienced clinicians.
-        </li>
-
-        <li>
-          <strong>Collaborative culture</strong>
-          Work alongside a team that values communication and respect.
-        </li>
-
-        <li>
-          <strong>Meaningful caseloads</strong>
-          Focus on quality care and sustainable clinical practice.
-        </li>
-
-      </ul>
-
-    </div>
-
-
-    <div>
-
-      <div class="jobs">
-
-        <div class="job">
-
-          <div>
-            <h3>Board Certified Behavior Analyst (BCBA)</h3>
-            <p>Woodbridge, VA · Clinical</p>
-          </div>
-
-          <a href="mailto:echoautism@outlook.com?subject=BCBA Career Inquiry">
-            Apply →
-          </a>
-
-        </div>
-
-
-        <div class="job">
-
-          <div>
-            <h3>Registered Behavior Technician (RBT)</h3>
-            <p>Woodbridge, VA · Direct Services</p>
-          </div>
-
-          <a href="mailto:echoautism@outlook.com?subject=RBT Career Inquiry">
-            Apply →
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <p style="margin-top:18px; color:var(--muted); font-size:13px;">
-        Don't see the right position? Send us your resume and tell us
-        what type of role you're looking for.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     INTAKE CTA
-     ========================================================= -->
-
-<section class="cta" id="intake">
-
-  <div class="container">
-
-    <div class="cta-box">
-
-      <div>
-
-        <div class="section-label" style="color:#d5f4f0;">
-          Start Your Journey
-        </div>
-
-        <h2>
-          Ready to explore ABA therapy for your child?
-        </h2>
-
-        <p>
-          Contact Echo Autism Behavior Therapy to learn more about
-          services, availability, and the intake process.
-        </p>
-
-      </div>
-
-
-      <!-- Replace this with your HIPAA-compliant intake portal -->
-      <a
-        class="btn"
-        href="mailto:echoautism@outlook.com?subject=ABA Therapy Intake Inquiry"
-      >
-        Start Intake Process
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Echo Autism Behavior Therapy home">
+        <img src="images/logo.png" alt="Echo Autism Behavior Therapy logo">
       </a>
-
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">Menu ☰</button>
+      <nav class="nav-links" id="site-navigation" aria-label="Main navigation">
+        <a href="#approach">Our Approach</a>
+        <a href="#services">Services</a>
+        <a href="#getting-started">Getting Started</a>
+        <a href="#insurance">Insurance</a>
+        <a href="#careers">Careers</a>
+        <a class="nav-call" href="tel:+17033096558">Call Us</a>
+      </nav>
     </div>
+  </header>
 
-  </div>
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-     ========================================================= -->
-
-<section class="contact" id="contact">
-
-  <div class="container">
-
-    <div class="section-heading">
-
-      <div class="section-label">Contact Us</div>
-
-      <h2>
-        We're here to help.
-      </h2>
-
-      <p>
-        Have questions about ABA therapy in Woodbridge, Virginia?
-        Reach out and our team will help you understand the next steps.
-      </p>
-
-    </div>
-
-
-    <div class="contact-grid">
-
-      <div class="contact-card">
-
-        <div class="contact-item">
-
-          <strong>Phone</strong>
-
-          <a href="tel:7033096558">
-            703-309-6558
-          </a>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>Email</strong>
-
-          <a href="mailto:echoautism@outlook.com">
-            echoautism@outlook.com
-          </a>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>Location</strong>
-
-          <span>
-            Woodbridge, Virginia
-          </span>
-
-        </div>
-
-
-        <div class="contact-item">
-
-          <strong>Service Area</strong>
-
-          <span>
-            Woodbridge and surrounding Northern Virginia communities.
-          </span>
-
-        </div>
-
-
-        <div style="margin-top:28px;">
-
-          <a
-            class="btn btn-primary"
-            href="tel:7033096558"
-          >
-            Call Echo Autism Therapy
-          </a>
-
-        </div>
-
-      </div>
-
-
-      <div class="map">
-
-        <!--
-          The exact street address was not provided.
-          This map currently centers on Woodbridge, Virginia.
-          Replace the iframe URL once your exact business address
-          is available.
-        -->
-
-        <iframe
-          title="Map showing Woodbridge, Virginia"
-          src="https://www.google.com/maps?q=Woodbridge%2C%20Virginia&output=embed"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-</main>
-
-
-<!-- =========================================================
-     FOOTER
-     ========================================================= -->
-
-<footer>
-
-  <div class="container">
-
-    <div class="footer-grid">
-
-      <div>
-
-        <a class="brand" href="#home">
-
-          <div class="brand-mark">E</div>
-
-          <div class="brand-text">
-            <strong>Echo Autism</strong>
-            <span>Behavior Therapy</span>
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Connection. Growth. Possibility.</span>
+          <h1>Every child deserves to <span>be heard.</span></h1>
+          <p class="hero-copy">Personalized ABA therapy that celebrates each child's strengths, builds meaningful skills, and supports families every step of the way.</p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:+17033096558">☎ Call 703-309-6558</a>
+            <a class="btn btn-secondary" href="#services">Explore our services <span aria-hidden="true">→</span></a>
           </div>
-
-        </a>
-
-        <p>
-          Compassionate, individualized ABA therapy and family support
-          for children with autism in Woodbridge, Virginia.
-        </p>
-
+          <div class="hero-note"><span class="dot" aria-hidden="true"></span> Family-centered care in Woodbridge, Virginia and surrounding communities.</div>
+        </div>
+        <div class="hero-visual">
+          <img class="hero-photo" src="images/hero-therapy.jpg" alt="A therapist sharing a play-based learning activity with a child">
+          <div class="photo-tag">
+            <div class="tag-icon" aria-hidden="true">🌱</div>
+            <div><strong>Progress at their pace</strong><small>Individualized, compassionate support</small></div>
+          </div>
+        </div>
       </div>
+    </section>
 
-
-      <div>
-
-        <h3>Explore</h3>
-
-        <ul>
-          <li><a href="#about">Our Approach</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#admissions">Admissions</a></li>
-          <li><a href="#careers">Careers</a></li>
-        </ul>
-
+    <section id="approach">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The Echo approach</span>
+          <h2>Care that starts with connection</h2>
+          <p>Children learn best when they feel safe, understood, and supported. We work with each child and family to build skills that matter in everyday life.</p>
+        </div>
+        <div class="pillars">
+          <article class="pillar"><div class="pillar-icon" aria-hidden="true">💛</div><h3>Child-centered</h3><p>We honor each child's individuality, interests, communication style, and pace of learning.</p></article>
+          <article class="pillar"><div class="pillar-icon" aria-hidden="true">🧩</div><h3>Meaningful skills</h3><p>Our focus is on practical, individualized goals that support communication, independence, and daily routines.</p></article>
+          <article class="pillar"><div class="pillar-icon" aria-hidden="true">🤝</div><h3>Family partnership</h3><p>Families are valued partners. We share strategies and collaborate so learning can carry into everyday moments.</p></article>
+        </div>
       </div>
+    </section>
 
-
-      <div>
-
-        <h3>Contact</h3>
-
-        <ul>
-          <li>
-            <a href="tel:7033096558">
-              703-309-6558
-            </a>
-          </li>
-
-          <li>
-            <a href="mailto:echoautism@outlook.com">
-              echoautism@outlook.com
-            </a>
-          </li>
-
-          <li>Woodbridge, Virginia</li>
-        </ul>
-
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How we can help</span>
+          <h2>Support designed around your family</h2>
+          <p>Our services are tailored to each child's strengths, needs, and goals, with an emphasis on collaboration and real-life progress.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="images/in-home-aba.png" alt="A child practicing communication skills with a therapist during a learning activity" loading="lazy">
+            <div class="service-content">
+              <span class="eyebrow">One-on-one support</span>
+              <h3>In-Home ABA Therapy</h3>
+              <p>Individualized Applied Behavior Analysis services in a familiar setting, helping children practice skills where everyday life happens.</p>
+              <ul class="check-list"><li>Individualized learning goals</li><li>Communication and daily living skills</li><li>Play-based, practical learning</li><li>Ongoing family collaboration</li></ul>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="images/parent-training.png" alt="A young child using a picture card during a learning activity in a welcoming therapy space" loading="lazy">
+            <div class="service-content">
+              <span class="eyebrow">Tools for everyday life</span>
+              <h3>Parent Training &amp; Coaching</h3>
+              <p>Practical guidance to help caregivers feel more confident using supportive strategies throughout daily routines.</p>
+              <ul class="check-list"><li>Personalized caregiver coaching</li><li>Strategies for home routines</li><li>Support for communication goals</li><li>Collaborative problem-solving</li></ul>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
+    <section>
+      <div class="container philosophy-grid">
+        <div class="philosophy-art">
+          <div class="quote-mark" aria-hidden="true">“</div>
+          <blockquote>Progress isn't one-size-fits-all. It is every meaningful step forward.</blockquote>
+          <p>At Echo, we look for the small moments that add up to greater connection, confidence, and independence.</p>
+        </div>
+        <div class="philosophy-copy">
+          <span class="eyebrow">Our clinical philosophy</span>
+          <h2>Respectful care. Real-world goals.</h2>
+          <p>We believe therapy should be compassionate, collaborative, and focused on skills that improve quality of life. Plans should reflect the child and family's priorities—not a one-size-fits-all checklist.</p>
+          <div class="values">
+            <div class="value"><span class="value-icon" aria-hidden="true">✓</span><div><strong>Individualized plans</strong><span>Goals shaped around each learner.</span></div></div>
+            <div class="value"><span class="value-icon" aria-hidden="true">✓</span><div><strong>Positive support</strong><span>Teaching through encouragement.</span></div></div>
+            <div class="value"><span class="value-icon" aria-hidden="true">✓</span><div><strong>Family collaboration</strong><span>Working together, consistently.</span></div></div>
+            <div class="value"><span class="value-icon" aria-hidden="true">✓</span><div><strong>Everyday impact</strong><span>Skills for home and community.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="getting-started" style="background:#f8f6ff">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Getting started</span>
+          <h2>A clear path, one step at a time</h2>
+          <p>We want families to understand what to expect. These are the typical steps when exploring services with a provider.</p>
+        </div>
+        <div class="steps">
+          <article class="step"><div class="step-number">1</div><h3>Connect</h3><p>Reach out by phone or email with general questions about services and next steps.</p></article>
+          <article class="step"><div class="step-number">2</div><h3>Discuss needs</h3><p>Talk through your child's strengths, support needs, and what your family hopes to work toward.</p></article>
+          <article class="step"><div class="step-number">3</div><h3>Review options</h3><p>Learn about assessment, clinical recommendations, availability, and any documentation needed.</p></article>
+          <article class="step"><div class="step-number">4</div><h3>Plan together</h3><p>If services are a fit, work with the care team on individualized goals and a plan for support.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="insurance" id="insurance">
+      <div class="container insurance-wrap">
+        <div class="insurance-copy">
+          <span class="eyebrow">Insurance &amp; coverage</span>
+          <h2>Let's talk about coverage</h2>
+          <p>Coverage for ABA therapy varies by plan, diagnosis, medical-necessity criteria, and authorization requirements. Contact us to discuss your plan and what verification may be needed.</p>
+          <a class="btn btn-primary" href="tel:+17033096558">Ask about insurance</a>
+        </div>
+        <div class="insurance-card">
+          <h3>Plans families may ask about</h3>
+          <p>Contact us to confirm current network participation and eligibility for your specific plan.</p>
+          <div class="insurer-grid">
+            <div class="insurer">Blue Cross Blue Shield</div>
+            <div class="insurer">Aetna</div>
+            <div class="insurer">Medicaid</div>
+            <div class="insurer">Cigna</div>
+            <div class="insurer">CareFirst</div>
+          </div>
+          <p class="disclaimer">This list is for general guidance and does not guarantee that a plan is accepted or that a service will be covered. Benefits and authorization requirements must be verified individually.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="careers">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Join our team</span>
+          <h2>Make a meaningful difference</h2>
+          <p>We're interested in connecting with compassionate professionals who value collaboration, learning, and respectful, individualized care.</p>
+        </div>
+        <div class="careers-grid">
+          <article class="career-card"><span class="career-label">Clinical leadership</span><h3>Board Certified Behavior Analysts (BCBAs)</h3><p>Help guide individualized treatment planning, support caregivers, and collaborate with a team focused on meaningful progress.</p></article>
+          <article class="career-card"><span class="career-label">Direct support</span><h3>Registered Behavior Technicians (RBTs)</h3><p>Support children as they practice communication, independence, and everyday skills through compassionate, evidence-informed care.</p></article>
+        </div>
+        <p style="text-align:center;color:var(--muted);margin:25px 0 0">Interested in opportunities? Email <a href="mailto:echoautism@outlook.com">echoautism@outlook.com</a> with a brief introduction.</p>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <span class="eyebrow">Contact Echo</span>
+          <h2>Let's start with a conversation.</h2>
+          <p>Have questions about our services, coverage, or career opportunities? Reach out using the contact details below. Please do not send sensitive medical information by regular email.</p>
+          <div class="contact-details">
+            <div class="contact-item"><span class="contact-symbol" aria-hidden="true">☎</span><div><small>Call us</small><a href="tel:+17033096558">703-309-6558</a></div></div>
+            <div class="contact-item"><span class="contact-symbol" aria-hidden="true">✉</span><div><small>Email us</small><a href="mailto:echoautism@outlook.com">echoautism@outlook.com</a></div></div>
+            <div class="contact-item"><span class="contact-symbol" aria-hidden="true">⌖</span><div><small>Serving</small><strong>Woodbridge, Virginia and surrounding communities</strong></div></div>
+          </div>
+        </div>
+        <div>
+          <iframe class="map-frame" title="Map showing Woodbridge, Virginia" src="https://maps.google.com/maps?q=Woodbridge%2C%20Virginia&t=&z=11&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand"><img src="images/logo.png" alt="Echo Autism Behavior Therapy logo"><span>Compassionate support for children and families.</span></div>
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#approach">Our Approach</a><a href="#services">Services</a><a href="#insurance">Insurance</a><a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <p class="copyright">© <span id="year">2026</span> Echo Autism Behavior Therapy. All rights reserved.</p>
     </div>
+  </footer>
 
-
-    <div class="copyright">
-
-      © <span id="year"></span> Echo Autism Behavior Therapy.
-      All rights reserved.
-
-    </div>
-
-  </div>
-
-</footer>
-
-
-<!-- =========================================================
-     JAVASCRIPT
-     ========================================================= -->
-
-<script>
-
-  /* Mobile navigation */
-
-  const menuButton = document.getElementById("menuButton");
-  const navMenu = document.getElementById("navMenu");
-
-  menuButton.addEventListener("click", function () {
-
-    const isOpen = navMenu.classList.toggle("show");
-
-    menuButton.setAttribute("aria-expanded", isOpen);
-
-  });
-
-
-  /* Close mobile menu after selecting a link */
-
-  document.querySelectorAll("#navMenu a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-      navMenu.classList.remove("show");
-
-      menuButton.setAttribute("aria-expanded", "false");
-
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navigation = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const isOpen = navigation.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(isOpen));
     });
-
-  });
-
-
-  /* Insurance checker */
-
-  const insuranceButtons =
-    document.querySelectorAll(".insurance-option");
-
-  const insuranceResult =
-    document.getElementById("insuranceResult");
-
-  insuranceButtons.forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-      insuranceButtons.forEach(function(item) {
-        item.classList.remove("active");
+    navigation.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navigation.classList.remove('open');
+        menuButton.setAttribute('aria-expanded', 'false');
       });
-
-      button.classList.add("active");
-
-      const provider = button.getAttribute("data-provider");
-
-      insuranceResult.innerHTML =
-        "<strong>" +
-        provider +
-        "</strong> may be accepted. " +
-        "Coverage, benefits, and prior authorization requirements " +
-        "depend on your specific plan. Please contact us so we can " +
-        "help verify your benefits.";
-
     });
-
-  });
-
-
-  /* Current year */
-
-  document.getElementById("year").textContent =
-    new Date().getFullYear();
-
-</script>
-
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
-```
